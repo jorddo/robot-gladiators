@@ -1,6 +1,7 @@
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
+var playerMoney = 10;
 
 // can also log multi values like this:
 console.log(playerName, playerAttack, playerHealth);
@@ -58,7 +59,14 @@ var fight = function () {
     }
     // if player choses to skip
   } else if (promptFight === 'skip' || promptFight === 'SKIP') {
-    window.alert(playerName + ' has chosen to skip the fight!');
+    var confirmSkip = window.confirm("Are you sure you'd like to skip?");
+
+    if (confirmSkip) {
+      window.alert(playerName + ' has decided to skip this fight. Goodbye!');
+      playerMoney = playerMoney - 2;
+    } else {
+      fight();
+    }
   } else {
     window.alert('You need to choose a valid option. Try again!');
   }
