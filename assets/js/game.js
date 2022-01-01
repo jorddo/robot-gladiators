@@ -89,6 +89,7 @@ for (var i = 0; i < enemyNames.length; i++) {
     var pickedEnemyName = enemyNames[i];
     // reset enemy health before starting new fight
     enemyHealth = 50;
+    // uncomment below to debug
     //debugger
     //pass the pickedEnemyName variables into the fight function
     fight(pickedEnemyName);
